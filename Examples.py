@@ -13,40 +13,40 @@ print("Hello World")
 # add/subtract #multiply/Divide, so calculations as a simple/complex calculator
 a = 4 + 5
 b = 9 - 5
-print(a + b) # print function, prints the variables to the console
+print(a + b)  # print function, prints the variables to the console
 
 y = 4 * 3
 z = 18 / 3
-print(y + z) # simple addition of two variables
+print(y + z)  # simple addition of two variables
 
 # power/Sq Root
 c = 4 ** 4
 print(c)
 
-c = (2**10) # 2*2*2*2*2*2*2*2*2*2 to the 10 power or see below as 2*2 10 times
+c = (2 ** 10)  # 2*2*2*2*2*2*2*2*2*2 to the 10 power or see below as 2*2 10 times
 print(c)
 
-f = 2*2*2*2*2*2*2*2*2*2
+f = 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2
 print(f)
 
-b = (400**(1 / 2))
+b = (400 ** (1 / 2))
 print(b)
 
 # squareRoot
-sq = (9**(1 / 2))
+sq = (9 ** (1 / 2))
 print(sq)
 
 # d floor division (integer division)
 d = 9 // 3
 print(d)
 
-d = 9 / 3 # float division, float being decimals
+d = 9 / 3  # float division, float being decimals
 print(d)
 
-e = 3 % 7 # modulo operator - returning the remainder of a problem or by dividing the left by the right,
+e = 3 % 7  # modulo operator - returning the remainder of a problem or by dividing the left by the right,
 print(e)
 
-f = 3 & 4 # Equals 3  becuase 3 goes into 4 ZERO times, 3 remains
+f = 3 & 4  # Equals 3  becuase 3 goes into 4 ZERO times, 3 remains
 print(f)
 
 # order Of Operations
@@ -59,9 +59,9 @@ name = "USS Enterprise"
 print(name + hello)
 
 # disk size is 16 * 1024 3 times
-disk_size = 16*1024*1024*1024
+disk_size = 16 * 1024 * 1024 * 1024
 sector_size = 512
-sector_amount = disk_size/sector_size
+sector_amount = disk_size / sector_size
 
 print(sector_amount)
 
@@ -122,6 +122,7 @@ print("2 + 2 = " + str(2 + 2))
 def greeting(name):
     print("Welcome, " + name)
 
+
 greeting("Kay")
 
 
@@ -129,6 +130,7 @@ greeting("Kay")
 def greeting(name, department):
     print("Welcome, " + name)
     print("You are part of " + department)
+
 
 greeting("Steve", "IT")
 
@@ -218,6 +220,7 @@ rectangle_area(5, 6)
 def convert_distance(miles):
     km = miles * 1.6  # approximately 1.6 km in 1 mile
     return km
+
 
 miles = 55
 km = convert_distance(miles)
@@ -749,8 +752,22 @@ pets = "Cats & Dogs"
 print(pets.index("&"))
 print(pets.index("C"))
 print(pets.index("s"))  # just first s is returned
-# print(pets.index("x")) This is a value error
-"Dragons" in pets # error, dragons is not in pets
+# print(pets.index("x"))
+print("Dragons" in pets)  # false
+print("Cats" in pets)
+# in is conditional, true or false, is Dragon part of the string? And Cats?
 
-word = "supercalifragilisticexpialidocious"
-print(word.index("x"))
+word = "super dog"
+print(word.index("d"))
+
+# def replace_domain(email, old_domain, new_domain):
+# if "@" + old_domain in email:
+# index = email.index("@" + old_domain)
+# new_email = email[:index] + "@" + new_domain
+# return new_email
+# return email
+
+# upper/lower case
+"Mountains" .upper()
+"Mountains" .lower()
+
