@@ -749,5 +749,8 @@ pets = "Cats & Dogs"
 print(pets.index("&"))
 print(pets.index("C"))
 print(pets.index("s"))  # just first s is returned
-# print(pets.index("x")) #substring error, cause x is not in the string
-"Dragons" in pets
+# print(pets.index("x")) This is a value error
+"Dragons" in pets # error, dragons is not in pets
+
+word = "supercalifragilisticexpialidocious"
+print(word.index("x"))
