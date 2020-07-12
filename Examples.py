@@ -194,7 +194,6 @@ def lucky_number(name):
     number = len(name) * 9
     print("Hello " + name + ". Your lucky number is " + str(number))
 
-
 lucky_number("Kay")
 lucky_number("Cameron")
 
@@ -964,6 +963,21 @@ print(file_size(('Program', 'py', 1239)))  # Should print 1.21
 animals = ["Lion", "Zebra", "Dolphin", "Monkey"]
 chars = 0
 for animal in animals:
-    chars += len(animals)
+    chars += len(animal)
 
 print("Total Characters: {}, Average Length: {}".format(chars, chars / len(animals)))
+
+winners = ["Ashely", "Dylan", "Reese"]
+for index, person in enumerate(winners):
+    print("{} - {}".format(index +1, person))
+
+
+def skip_elementss(elements):
+    for index, element in enumerate(elements):
+    print("{} + {}".format(index +1, element))
+
+    return skip_elements()
+
+
+print(skip_elements(["a", "b", "c", "d", "e", "f", "g"]))  # Should be ['a', 'c', 'e', 'g']
+print(skip_elements(['Orange', 'Pineapple', 'Strawberry', 'Kiwi', 'Peach']))  # Should be ['Orange', 'Strawberry', 'Peach']
