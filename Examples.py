@@ -6,6 +6,7 @@
 # as	elif	if	or	yield
 # assert	else	import	pass
 # break	except	in	raise
+from typing import Any, Union
 
 print("Section 1*******************")
 print("Hello World")
@@ -785,8 +786,8 @@ print("12345".isnumeric())
 print(int("12345") + int("12345"))
 
 # join/split and print to console
-print(" ".join(["This", "is", "a", "phrase","joined", "by", "spaces"]))
-print("...".join(["This", "is", "a", "phrase","joined", "by", "triple"]))
+print(" ".join(["This", "is", "a", "phrase", "joined", "by", "spaces"]))
+print("...".join(["This", "is", "a", "phrase", "joined", "by", "triple"]))
 print("This is another example".split())
 
 # diff. problem, strip letters, only print upper initial letters
@@ -804,14 +805,15 @@ print("This is another example".split())
 name = "Manny"
 number = len(name) * 3
 print("Hello {}, youcr lucky number is {}".format(name, number))
-print("Your lucky number is {number}, {name}.".format(name=name, number=len(name)*3))
+print("Your lucky number is {number}, {name}.".format(name=name, number=len(name) * 3))
+
 
 # Print Name and Grade
 def student_grade(name, grade):
     return "{} received {}% on the exam".format(name, grade)
 
-print(student_grade("Reed", 80))
 
+print(student_grade("Reed", 80))
 
 # Format Expressions, format values with float up to 2 digits diff from default value
 price = 7.5
@@ -819,9 +821,149 @@ with_tax = price * 1.09
 print(price, with_tax)
 print("Base price: ${:.2f}. With Tax: ${:.2f}".format(price, with_tax))
 
+
 # Celsius Calculation
 def to_celsius(x):
-    return (x-32)*5/9
+    return (x - 32) * 5 / 9
 
-for x in range (0, 101, 10):
-    print("{:>3} F | {:>6.2f} C".format(x, to_celsius(x)))  # prints table of F | C 0,10, 101 up to 2 digits float on C
+
+for x in range(0, 101, 10):
+    print("{:>3} F | {:>6.2f} C".format(x, to_celsius(
+        x)))  # > align right on 2 and 6, with float of 2 digits prints table of F | C 0,10, 101
+
+weather = "Rainfall"
+print(weather[:4])
+
+
+def is_palindrome(input_string):  # We'll create two strings, to compare them
+    new_string = ""
+    reverse_string = ""
+    # Traverse through each letter of the input string
+    for letter in input_string.upper():
+        # Add any non-blank letters to the
+        # end of one string, and to the front
+        # of the other string.
+        if letter != ' ':
+            new_string = new_string + letter
+            reverse_string = letter + reverse_string
+    # Compare the strings
+    if new_string == reverse_string:
+        return True
+    return False
+
+
+print(is_palindrome("Never Odd or Even"))  # Should be True
+print(is_palindrome("abc"))  # Should be False
+print(is_palindrome("kayak"))  # Should be True
+
+
+def convert_distance(miles):
+    km = miles * 1.6
+    result = "{} miles equals {:.1f} km".format(miles, km)
+    return result
+
+
+print(convert_distance(12))  # Should be: 12 miles equals 19.2 km
+print(convert_distance(5.5))  # Should be: 5.5 miles equals 8.8 km
+print(convert_distance(11))  # Should be: 11 miles equals 17.6 km
+
+
+def nametag(first_name, last_name):
+    return ("{} {}.".format(first_name, last_name[0]))
+
+
+print(nametag("Jane", "Smith"))
+# Should display "Jane S."
+print(nametag("Francesco", "Rinaldi"))
+# Should display "Francesco R."
+print(nametag("Jean-Luc", "Grand-Pierre"))
+# Should display "Jean-Luc G."
+
+# def replace_ending(sentence, old, new):
+#    if sentence.endswith(old):
+# Using i as the slicing index, combine the part
+# of the sentence up to the matched string at the
+# end with the new string
+#        i = len(old)
+#        new_sentence = sentence[:-i] + new
+#        return new_sentence
+
+#    # Return the original sentence if there is no match
+#   return sentence
+
+# print(replace_ending("It's raining cats and cats", "cats", "dogs"))
+# Should display "It's raining cats and dogs"
+# print(replace_ending("She sells seashells by the seashore", "seashells", "donuts"))
+# Should display "She sells seashells by the seashore"
+# print(replace_ending("The weather is nice in May", "may", "april"))
+# Should display "The weather is nice in May"
+# print(replace_ending("The weather is nice in May", "May", "April"))
+# Should display "The weather is nice in April"
+
+# Lists, is mutable or has the ability to change
+x = ["Now", "we", "have", "a", "list"]
+print(type(x))
+print(x)
+print(x[:3])
+print(x[2:3])
+print(x[1:3])
+print(x[3:5])
+
+print("a" in x)  # added print for py console
+print("Today" in x)
+
+fruits = ["Pineapple", "Banana", "Apple", "Melon"]
+fruits.append("Kiwi")
+print(fruits)
+
+fruits.insert(1, "Orange")
+fruits.insert(25, "Peach")  # insert at the end, 25 is above the index
+print(fruits)
+
+fruits.remove("Melon")  # Remove melon
+print(fruits)
+
+print(fruits.pop(4))
+print(fruits)
+
+fruits[2] = 'Strawberry'
+print(fruits)
+
+#  Tuples, immutable
+fullname = ('Grace', 'M', 'Hopper')
+print(fullname)
+
+
+def convert_seconds(seconds):
+    hours = seconds // 3600
+    minutes = (seconds - hours * 3600) // 60
+    remaining_seconds = seconds - hours * 3600 - minutes * 60
+    return hours, minutes, remaining_seconds
+
+
+result = convert_seconds(5000)
+print(result)
+
+hours, mintues, seconds = result
+print(hours, minutes, seconds)
+
+hours, minutes, seconds = convert_seconds(1000)
+print(hours, minutes, seconds)
+
+
+# Tuples Example in the text
+def file_size(file_info):
+    name, type, file_size = file_info
+    return ("{:.2f}".format(file_size / 1024))
+
+
+print(file_size(('Class Assignment', 'docx', 17875)))  # Should print 17.46
+print(file_size(('Notes', 'txt', 496)))  # Should print 0.48
+print(file_size(('Program', 'py', 1239)))  # Should print 1.21
+
+animals = ["Lion", "Zebra", "Dolphin", "Monkey"]
+chars = 0
+for animal in animals:
+    chars += len(animals)
+
+print("Total Characters: {}, Average Length: {}".format(chars, chars / len(animals)))
