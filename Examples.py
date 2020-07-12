@@ -754,12 +754,12 @@ print(pets.index("C"))
 print(pets.index("s"))  # just first s is returned
 # print(pets.index("x"))
 print("Dragons" in pets)  # false
-print("Cats" in pets)
-# in is conditional, true or false, is Dragon part of the string? And Cats?
+print("Cats" in pets)  # in is conditional, true or false, is Dragon part of the string? And Cats?
 
 word = "super dog"
-print(word.index("d"))
+print(word.index("d"))  # should return the index number for the letter d starting at 0
 
+# replace old email with new
 # def replace_domain(email, old_domain, new_domain):
 # if "@" + old_domain in email:
 # index = email.index("@" + old_domain)
@@ -767,7 +767,61 @@ print(word.index("d"))
 # return new_email
 # return email
 
+# print used to print strings to console
 # upper/lower case
-"Mountains" .upper()
-"Mountains" .lower()
+print("mountains".upper())
+print("MOUNTAINS".lower())
 
+# strip white space, also includes print to console
+print(" yes ".strip())
+print(" yes ".lstrip())
+print(" yes ".rstrip())
+
+# count/Endswith/isnumeric and print to console
+print("The number of times e e e occurs in this string is 5".count("e"))  # console print 6
+print("Forest".endswith("rest"))  # true
+print("Forest".isnumeric())
+print("12345".isnumeric())
+print(int("12345") + int("12345"))
+
+# join/split and print to console
+print(" ".join(["This", "is", "a", "phrase","joined", "by", "spaces"]))
+print("...".join(["This", "is", "a", "phrase","joined", "by", "triple"]))
+print("This is another example".split())
+
+# diff. problem, strip letters, only print upper initial letters
+# def initials(phrase):
+# words = phrase.
+# result = ""
+# for word in words:
+# result +=
+# return
+
+# print(initials("Universal Serial Bus"))  # Should be: USB
+# print(initials("local area network"))  # Should be: LAN
+# print(initials("Operating system"))  # Should be: OS
+
+name = "Manny"
+number = len(name) * 3
+print("Hello {}, youcr lucky number is {}".format(name, number))
+print("Your lucky number is {number}, {name}.".format(name=name, number=len(name)*3))
+
+# Print Name and Grade
+def student_grade(name, grade):
+    return "{} received {}% on the exam".format(name, grade)
+
+print(student_grade("Reed", 80))
+
+
+# Format Expressions, format values with float up to 2 digits diff from default value
+price = 7.5
+with_tax = price * 1.09
+print(price, with_tax)
+print("Base price: ${:.2f}. With Tax: ${:.2f}".format(price, with_tax))
+
+# Celsius Calculation
+def to_celsius(x):
+    return (x-32)*5/9
+
+for x in range (0, 101, 10):
+    print("{:>3} F | {:>6.2f} C".format(x, to_celsius(x)))  # prints table of F | C 0,10, 101 up to 2 digits float on C
