@@ -54,7 +54,7 @@ a ** b = Elevates a to the power of b. For non integer values of b, this becomes
 a // b = The integer part of the integer division of a by b
 a % b = The remainder part of the integer division of a by b
 '''
-
+# New Adding section per week
 # Week 1 Quiz/Module  Review
 print("-----Week 1 Quiz/Module Review -----")
 #  Print string to console
