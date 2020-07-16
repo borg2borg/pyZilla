@@ -130,4 +130,13 @@ average = total / files
 
 print("The average size is " + str(average))  # 20839.2
 
-
+'''
+Week 2
+Expressions, Variables, Functions, and Conditionals
+'''
+print("----- Week 2 Quiz - Expressions and Var  -----")
+bill = 47.28
+tip = bill * 0.15
+total = bill + tip
+share = total/2
+print("Each person needs to pay his/her share: " + str(share))
