@@ -1,7 +1,10 @@
 #  Table of Contents
 #  Week 1
 
-#  Week 1
+'''
+Week 1, adding print to console, syntax, calcs, operators and For
+'''
+print("----- Week 1 -----")
 print("Hello World")  # print a str
 print(5 * 5)  # print a calc
 print(5 > 5)  # print boolean
@@ -82,3 +85,32 @@ sector_size = 512
 sector_amount = disk_size/sector_size
 
 print(sector_amount)  # Print Sector Amount
+
+
+'''
+Week 2
+Expressions, Variables, Functions, and Conditionals
+'''
+print("----- Week 2 -----")
+# Types, strings, floats, integers, boolean
+print(type("Hello" + 'Hello with single quotes'))
+print(type(20.22))
+print(type(22 % 2))
+
+x = 22 < 23
+print(type(x))
+
+#  Variables
+length = 10
+width = 2
+area = length * width
+
+print(area)
+
+#  Expression combo of numbers, symbols or other variables that produce a result
+# Do use - start with a letter or underscore(_) Do NOT Use - py keywords or functions
+base = 5
+height = 3
+area = base * height/2
+
+print(area)
