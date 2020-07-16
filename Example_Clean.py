@@ -184,12 +184,94 @@ greeting("Eli", "IT CyOps")
 
 
 def print_seconds(hours, minutes, seconds):
-
-    print(hours*3600 + minutes*60 + seconds)  # Equals 3723 seconds in total
+    print(hours * 3600 + minutes * 60 + seconds)  # Equals 3723 seconds in total
     print(str(hours * 3600) + " = HOURS")
     print(str(minutes * 60) + " = MINUTES")
     print(str(seconds) + " = SECONDS")
     print(str(3600 + 120 + 3) + " Equals in Seconds")
 
 
-print_seconds(1,2,3)
+print_seconds(1, 2, 3)
+
+
+def area_triangle(base, height):
+    return base * height / 2
+
+
+area_a = area_triangle(5, 4)
+area_b = area_triangle(7, 3)
+sum = area_a + area_b
+
+print(area_a)
+print(area_b)
+print(area_a + area_b)  # print 20.5
+print("The sum of both areas is: " + str(sum))  # print The sum of both areas is: 20.5
+
+'''
+def get_seconds(hours, minutes, seconds):
+  return 3600*hours + 60*minutes + seconds
+
+amount_a = get_seconds(2,30,0)
+amount_b = get_seconds(0,45,15)
+result = amount_a + amount_b
+print(result)
+'''
+
+
+def get_seconds(hours, minutes, seconds):
+    return 3600 * hours + 60 * minutes + seconds
+
+
+amount_a = get_seconds(2, 30, 0)
+print(amount_a)  # 9000
+amount_b = get_seconds(0, 45, 15)
+print(amount_b)  # 2715
+result = amount_a + amount_b
+print(amount_a + amount_b)
+
+print(result)  # match above
+
+
+def convert_seconds(seconds):
+    hours = seconds // 3600
+    print(hours)  # print 1
+    minutes = (seconds - hours * 3600) // 60
+    print(minutes)  # print 23
+    remaining_seconds = seconds - hours * 3600 - minutes * 60
+    print(remaining_seconds)  # print 20
+    return hours, minutes, remaining_seconds  # 3 numbers
+
+
+hours, minutes, seconds = convert_seconds(5000)
+print(hours, minutes, seconds)
+
+
+# Return None value
+def greeting(name):
+    print("Welcome, " + name)
+
+
+result = greeting("Christine")
+print(result)  # expect none as returned value, special data type - indicate empty or return nothing
+
+'''
+Return value or pass data back to the user/console when a function is called
+That data passed back can be stored value and stored as a variable
+'''
+
+# Code RE-use
+name = "Kendra"
+number = len(name) * 9  # len, length of string KENDRA k being 1, E being 2... so 6 * 9 = 54. Therefore number is 64
+
+print('Hello ' + name + ", your lucky line number is " + str(number))
+
+
+# or for RE-use purposes, let's switch this around
+
+def lucky_number(name):
+    number = len(name) * 9
+    print('Hello ' + name + ", your lucky line number is " + str(number))
+
+
+lucky_number("Kendra")  # 6 charcters
+lucky_number("Cameron")  # 7 characters
