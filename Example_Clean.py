@@ -23,10 +23,10 @@ thing = "Thing"
 print("The " + color + " " + thing + " \"Swamp " + thing + "\" " + "is one of the most terrifying beast of lore")
 
 # Additional Calcs, addition squared, power(s) and square root
-x = (((1 + 2) * 3)/ 4)**5
+x = (((1 + 2) * 3) / 4) ** 5
 print(x)
 
-y = 4**(1/2)
+y = 4 ** (1 / 2)
 print(y)
 
 # for
@@ -64,7 +64,7 @@ print("-----Week 1 Quiz/Module Review -----")
 print("Programming in Python is, is like Godzilla wrecking it's favorite city building")
 
 #  Ratio with sqRoot
-ratio = ((1+5**(1/2))/2)
+ratio = ((1 + 5 ** (1 / 2)) / 2)
 print(ratio)
 
 #  add two strings, print
@@ -73,19 +73,18 @@ thing = "Sunflower"
 print(color + " is the color of " + thing + " on Siesta beach")
 
 #  Print Calc
-print(86400*7)
+print(86400 * 7)
 
-password = 26*26*26*26*26*26
+password = 26 * 26 * 26 * 26 * 26 * 26
 print(password)
 
 # Print Sector Amount, when Disk Size is divided by Sector Size
 # hard drives are 'divided' into Sectors of 512 bytes, Disk size osf 16gb - Disk Si
-disk_size = 16*1024*1024*1024  # Given 16gb * 1024**3
+disk_size = 16 * 1024 * 1024 * 1024  # Given 16gb * 1024**3
 sector_size = 512
-sector_amount = disk_size/sector_size
+sector_amount = disk_size / sector_size
 
 print(sector_amount)  # Print Sector Amount
-
 
 '''
 Week 2
@@ -107,10 +106,28 @@ area = length * width
 
 print(area)
 
-#  Expression combo of numbers, symbols or other variables that produce a result
+#  Expressions are a combo of numbers, symbols or other variables that produce a result
 # Do use - start with a letter or underscore(_) Do NOT Use - py keywords or functions
 base = 5
 height = 3
-area = base * height/2
+area = base * height / 2
 
 print(area)
+
+
+print(7+8.5)  # Converted 7 to float and calc or implicit conversion same with sentences
+
+# Explicit Conversion requires a type, in this example it will be str()
+base = 6
+height = 3
+area = (base * height)/2
+print("The area of a triangle is base * height divided by 2 equaling: " + str(area))  # console prints String of 9.0
+
+# Short Test/Check
+total = 2048 + 4357 + 97658 + +125 + 8
+files = 5
+average = total / files
+
+print("The average size is " + str(average))  # 20839.2
+
+
