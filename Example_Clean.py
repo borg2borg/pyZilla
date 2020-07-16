@@ -167,7 +167,29 @@ print("2 + 2 = " + str(2 + 2))  # 2 + 2 = 4 as a string
 # Week 2 - Functions and Conditionals
 # def = definition of variable
 def greeting(name):  # INCLUDE : semi color - defining greeting parameter is name
+
     print("Welcome, " + name)  # Welcome, name parameter below
 
 
 greeting("Eli")
+
+
+def greeting(name, department):  # defining greeting with two parameters name, department
+
+    print(
+        "Welcome, " + name + "you are within the " + department + " department, correct?")  # Welcome, name parameter below
+
+
+greeting("Eli", "IT CyOps")
+
+
+def print_seconds(hours, minutes, seconds):
+
+    print(hours*3600 + minutes*60 + seconds)  # Equals 3723 seconds in total
+    print(str(hours * 3600) + " = HOURS")
+    print(str(minutes * 60) + " = MINUTES")
+    print(str(seconds) + " = SECONDS")
+    print(str(3600 + 120 + 3) + " Equals in Seconds")
+
+
+print_seconds(1,2,3)
