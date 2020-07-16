@@ -342,7 +342,7 @@ lucky_number("Cassandra")  # 9*9 81 -----
 lucky_number("Oscar")  # 5*9 45 -----
 
 '''
-Week 3 Conditionals, < > != == and or not
+Week 3 Conditionals, < > != <= >= == and or not
 '''
 print(10 > 1)  # True -----
 print(10 > 1 and 10 > 2)  # True -----
@@ -375,16 +375,15 @@ print(is_positive(-100))  # False -----
 is_positive(1000)
 print(is_positive(1000))  # True -----
 
-
 # modulo return integer division quotient (number divisible evenly) is x, remainder is y and exits code-----
 # example would be
 print(4 % 2)  # 0 being no remainder -----
 print(5 % 2)  # 1 being the remainder or modulo of 5 -----
-print(float(43/7))  # 6 w remainder of 6.14285... therefore not 0, and considered != 0
+print(float(43 / 7))  # 6 w remainder of 6.14285... therefore not 0, and considered != 0
 
 rem3 = 43 % 7
 print(rem3)  # 3
-print(float(43/7))  # 6 w remainder of 6.14285... therefore not 0, and considered != 0
+print(float(43 / 7))  # 6 w remainder of 6.14285... therefore not 0, and considered != 0
 
 '''
 Example of modulo usage - https://www.jquery-az.com/python-modulo/
@@ -447,8 +446,61 @@ number_group(10)
 number_group(-10)
 number_group(0)
 
+'''
+Week 2
+Functions
+'''
+print("----- Week 2 Quiz - Conditionals  -----")
 
 
+def greeting(name):
+    if name == "Taylor":
+        return "Welcome back Taylor!"
+    else:
+        return "Hello there, " + name
 
 
+print(greeting("Taylor"))
+print(greeting("John"))
 
+if number > 11:
+    print(0)
+elif number != 10:
+    print(1)
+elif number >= 20 or number < 12:
+    print(2)
+else:
+    print(3)
+
+print("A dog " + "A mouse")  # 5 vs 7 ----
+print(9999 + 8888 + 100 * 100)  # 18887 vs 10000 -----
+
+
+def calculate_storage(filesize):
+    block_size = 4096
+    full_blocks = filesize // block_size
+    partial_block_remainder = (filesize % block_size)
+    if partial_block_remainder > 0:
+        return full_blocks * 4096 + block_size
+    return full_blocks * 4096
+
+
+print(calculate_storage(1))
+print(1//4096 * 4096)
+print(calculate_storage(4096))
+print(4096//4096 * 4096)
+print(calculate_storage(4097))
+
+print(4097//4096 * 4096 + 4096)
+print(calculate_storage(6000))
+print(6000//4096 * 4096 + 4096)
+
+# Should be 4096 -----
+# Should be 4096 -----
+# Should be 8192 -----
+# Should be 8192 -----
+
+'''
+Week 2 Module Quizzes and Review
+'''
+print("Week 2 Module Quiz  ---------------------")
