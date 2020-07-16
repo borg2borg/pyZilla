@@ -100,7 +100,7 @@ print(type(22 % 2))
 x = 22 < 23
 print(type(x))
 
-#  Variables
+#  Variables, added
 length = 10
 width = 2
 area = length * width
