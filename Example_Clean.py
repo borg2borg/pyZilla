@@ -114,13 +114,13 @@ area = base * height / 2
 
 print(area)
 
-
-print(7+8.5)  # Converted 7 to float and calc or implicit conversion same with sentences
+print(7 + 8.5)  # Converted 7 to float and calc or implicit conversion same with sentences
 
 # Explicit Conversion requires a type, in this example it will be str()
 base = 6
 height = 3
-area = (base * height)/2
+area = (base * height) / 2
+
 print("The area of a triangle is base * height divided by 2 equaling: " + str(area))  # console prints String of 9.0
 
 # Short Test/Check
@@ -138,5 +138,36 @@ print("----- Week 2 Quiz - Expressions and Var  -----")
 bill = 47.28
 tip = bill * 0.15
 total = bill + tip
-share = total/2
+share = total / 2
+
 print("Each person needs to pay his/her share: " + str(share))
+
+# 2 integers / 1 by the other so that result = 1
+numerator = 10
+denominator = 10
+result = numerator / denominator
+
+print(int(result))  # print 1
+
+word1 = "How "
+word2 = "do "
+word3 = "you "
+word4 = "like "
+word5 = "Python "
+word6 = "so "
+word7 = "far?"
+wordAll = word1 + word2 + word3 + word4 + word5 + word6 + word7
+
+print(str(wordAll))  # How do you like Python so far?
+
+# convert to string
+print("2 + 2 = " + str(2 + 2))  # 2 + 2 = 4 as a string
+
+
+# Week 2 - Functions and Conditionals
+# def = definition of variable
+def greeting(name):  # INCLUDE : semi color - defining greeting parameter is name
+    print("Welcome, " + name)  # Welcome, name parameter below
+
+
+greeting("Eli")
