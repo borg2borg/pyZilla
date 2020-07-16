@@ -4,7 +4,6 @@ Table of Contents
 # Week 2
 """
 
-
 # Week 1, adding print to console, syntax, calcs, operators and For
 
 print("----- Week 1 -----")
@@ -298,3 +297,114 @@ def circle_area(radius):
 
 
 circle_area(5)  # print 78.5  -----
+
+'''
+Week 2
+Functions
+'''
+print("----- Week 2 Quiz - Functions  -----")
+
+
+# convert Miles (M) to Kilometers (km) -----
+def convert_distance(miles):
+    km = miles * 1.6
+    return km
+
+
+miles = 55
+km = convert_distance(miles)
+
+print("The distance in kilometers is " + str(km))  # "String": 88.0 -----
+print("The round-trip distance in kilometers is " + str(km * 2))  # "String": 176.0 -----
+
+
+# reorder numbers smaller to bigger -----
+def order_numbers(number1, number2):
+    if number2 > number1:
+        return number1, number2
+    else:
+        return number2, number1
+
+
+smaller, bigger = order_numbers(100, 99)
+print(smaller, bigger)  # 99 100 -----
+
+smaller, bigger = order_numbers(2, 1)
+print(smaller, bigger)  # 2 1 -----
+
+
+def lucky_numbers(name):
+    number = len(name) * 9
+    print("Hello " + name + "." + "Your lucky number is " + str(number))
+
+
+lucky_number("Cassandra")  # 9*9 81 -----
+lucky_number("Oscar")  # 5*9 45 -----
+
+'''
+Week 3 Conditionals, < > != == and or not
+'''
+print(10 > 1)  # True -----
+print(10 > 1 and 10 > 2)  # True -----
+print(25 > 50 or 1 != 2)  # True -----
+print(not 42 == "Answer")  # True -----
+print(not 42 == 42)  # False -----
+
+
+# Branching, like if elif else -----
+def hint_username(username):
+    if len(username) < 3:  # if true, run the if statement, otherwise skip -----
+        print("Invalid, Must be at least 3 char long")
+    else:
+        print("You did it, this username is valid!")
+
+
+hint_username("User")
+
+
+# Simple if Else where one statement is true returned true, where the other is returned false ----
+def is_positive(number):
+    if number > 0:
+        return True
+    else:
+        return False
+
+
+is_positive(-100)
+print(is_positive(-100))  # False -----
+is_positive(1000)
+print(is_positive(1000))  # True -----
+
+
+# modulo return integer division quotient (number divisible evenly) is x, remainder is y and exits code-----
+# example would be
+print(4 % 2)  # 0 being no remainder -----
+print(5 % 2)  # 1 being the remainder or modulo of 5 -----
+print(float(43/7))  # 6 w remainder of 6.14285... therefore not 0, and considered != 0
+
+rem3 = 43 % 7
+print(rem3)  # 3
+print(float(43/7))  # 6 w remainder of 6.14285... therefore not 0, and considered != 0
+
+'''
+Example of modulo usage - https://www.jquery-az.com/python-modulo/
+year_input = int(input("Enter a year:  "))
+
+if year_input % 4 == 0:
+    print("Remainder is 0 so ", year_input, "is a leap year!")
+else:
+    print(year_input, "Not a leap year!")
+'''
+
+
+
+def is_even(number):
+    if number % 2 == 0:
+        return True
+    else:
+        return False
+
+is_even(9)
+print(is_even(9))  # False, 99 % 2 is no 1
+is_even(8)
+print(is_even(8))  # False, 99 % 2 is no 1
