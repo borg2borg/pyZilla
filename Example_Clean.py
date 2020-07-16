@@ -55,9 +55,30 @@ a // b = The integer part of the integer division of a by b
 a % b = The remainder part of the integer division of a by b
 '''
 
-# Week 1 Quiz
-print("-----Week 1 Quiz -----")
+# Week 1 Quiz/Module  Review
+print("-----Week 1 Quiz/Module Review -----")
+#  Print string to console
 print("Programming in Python is, is like Godzilla wrecking it's favorite city building")
 
+#  Ratio with sqRoot
 ratio = ((1+5**(1/2))/2)
 print(ratio)
+
+#  add two strings, print
+color = "Yellow"
+thing = "Sunflower"
+print(color + " is the color of " + thing + " on Siesta beach")
+
+#  Print Calc
+print(86400*7)
+
+password = 26*26*26*26*26*26
+print(password)
+
+# Print Sector Amount, when Disk Size is divided by Sector Size
+# hard drives are 'divided' into Sectors of 512 bytes, Disk size osf 16gb - Disk Si
+disk_size = 16*1024*1024*1024  # Given 16gb * 1024**3
+sector_size = 512
+sector_amount = disk_size/sector_size
+
+print(sector_amount)  # Print Sector Amount
