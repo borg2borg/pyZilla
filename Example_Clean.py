@@ -394,8 +394,15 @@ if year_input % 4 == 0:
     print("Remainder is 0 so ", year_input, "is a leap year!")
 else:
     print(year_input, "Not a leap year!")
+    
+    
+Additional Detail
+% integer division, but only returns the remainder of this division operation. 
+If we’re dividing 5 by 2, the quotient is 2, and the remainder is 1. 
+Two 2s can go into 5, leaving 1 left over. So 5%2 would return 1. 
+Dividing 10 by 5 would give us a quotient of 2 with no remainder, since 5 
+can go into 10 twice with nothing left over. In this case, 10%2 would return 0, as there is no remainder.
 '''
-
 
 
 def is_even(number):
@@ -404,7 +411,44 @@ def is_even(number):
     else:
         return False
 
+
 is_even(9)
-print(is_even(9))  # False, 99 % 2 is no 1
+print(is_even(9))  # False, 99 % 2 is no 1 -----
 is_even(8)
-print(is_even(8))  # False, 99 % 2 is no 1
+print(is_even(8))  # False, 99 % 2 is no 1 -----
+
+
+def hint_username(username):
+    if len(username) < 3:
+        print("Invalid. Must be 3 characters or more.")
+    elif len(username) > 15:
+        print("Invalid. Must be less than 15 characters.")
+    else:
+        print("Valid, please proceed to the next round")
+
+
+hint_username("User")
+hint_username("Us")
+hint_username("UserNumberThree")
+hint_username("JackSallee")
+
+
+# Return Positive, Negative or Zero -----
+def number_group(number):
+    if number > 0:
+        return "Positive"  # True -----
+    elif number < 0:
+        return "Negative"  # When True -----
+    else:
+        return "Zero"  # Otherwise if not > or <, it is 0 -----
+
+
+number_group(10)
+number_group(-10)
+number_group(0)
+
+
+
+
+
+
