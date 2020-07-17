@@ -503,4 +503,5 @@ print(6000//4096 * 4096 + 4096)
 '''
 Week 2 Module Quizzes and Review
 '''
+
 print("Week 2 Module Quiz  ---------------------")
