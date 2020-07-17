@@ -486,14 +486,14 @@ def calculate_storage(filesize):
 
 
 print(calculate_storage(1))
-print(1//4096 * 4096)
+print(1 // 4096 * 4096)
 print(calculate_storage(4096))
-print(4096//4096 * 4096)
+print(4096 // 4096 * 4096)
 print(calculate_storage(4097))
 
-print(4097//4096 * 4096 + 4096)
+print(4097 // 4096 * 4096 + 4096)
 print(calculate_storage(6000))
-print(6000//4096 * 4096 + 4096)
+print(6000 // 4096 * 4096 + 4096)
 
 # Should be 4096 -----
 # Should be 4096 -----
@@ -505,3 +505,127 @@ Week 2 Module Quizzes and Review
 '''
 
 print("Week 2 Module Quiz  ---------------------")
+
+
+def color_translator(color):
+    if color == "red":
+        hex_color = "#ff000"
+    elif color == "green":
+        hex_color = "#00ff00"
+    elif color == "blue":
+        hex_color = "#0000ff"
+    else:
+        hex_color = "unknown color"
+    return hex_color
+
+
+print(color_translator("blue"))
+print(color_translator("yellow"))
+print(color_translator("red"))
+print(color_translator("black"))
+print(color_translator("green"))
+print(color_translator(""))
+print(color_translator("Purple"))
+
+
+# Try and order if, elif and else statements in order down from highest number, for some reason it didn't work otherwise
+def exam_grade(score):
+    if score == 100:
+        grade = "Top Score, congrats!"
+    elif score >= 95:
+        grade = "Awesome work, congrats."
+    elif score >= 60:
+        grade = "Pass"
+    elif score <= 10:
+        grade = "Please come see me, we need to review the test together."
+    else:
+        grade = "Fail"
+    return grade
+
+
+print(exam_grade(95))
+print(exam_grade(62))
+print(exam_grade(55))
+print(exam_grade(60))
+print(exam_grade(61))
+print(exam_grade(58.5))
+print(exam_grade(94.5))
+print(exam_grade(100))
+print(exam_grade(0))
+
+# Modulo question
+x = 11 % 5  # 5 goes into 11 2 times (quotient), with a (remainder) of 1, passes back 1
+print(x)
+
+# Modulo #2
+y = 10 % 5  # 5 goes into 10 2 times (quotient), with a (remainder) of 0, passes back 0
+print(y)
+
+
+def format_name(first_name, last_name):
+    if first_name != "" and last_name != "":  # if both strings are not empty, return first_name, last_name
+        return "Name: " + last_name + ", " + first_name
+    elif first_name == "" and last_name != "":  # if string for last_name is not empty, return last_name
+        return "Name: " + last_name
+    elif first_name != "" and last_name == "":  # if string for first_name is not empty, return first_name
+        return "Name: " + first_name
+    else:  # Else return empty strings for first_name and last_name, return empty ""
+        return ""
+
+
+print(format_name("Ernest", "Hemingway"))
+# Should return the string "Name: Hemingway, Ernest"
+
+print(format_name("", "Madonna"))
+# Should return the string "Name: Madonna"
+
+print(format_name("Voltaire", ""))
+# Should return the string "Name: Voltaire"
+
+print(format_name("", ""))
+
+
+# Should return an empty string
+
+
+def longest_word(word1, word2, word3):
+    if len(word1) >= len(word2) and len(word1) >= len(word3):  # if Chair is longer than Couch & Chair longer than table
+        word = word1
+    elif len(word1) <= len(word2) and len(word2) >= len(word3):  # if bed shorter than bath, bath is longer than beyond
+        word = word2
+    else:  # word 3 most be the longest of all
+        word = word3
+    return word
+
+
+print(longest_word("chair", "couch", "table"))
+print(longest_word("bed", "bath", "beyond"))
+print(longest_word("laptop", "notebook", "desktop"))
+
+
+def sum_input(x, y):
+    return x + y
+
+
+print(sum_input(sum_input(1, 2), sum_input(3, 4)))  # print 3 + 7 = 10
+
+x = ((10 >= 5 * 2) and (10 <= 5 * 2))
+print(x)  # True, 10 >= 10 and 10 <= 10 due to the = operator
+
+
+def fractional_part(numerator, denominator):
+    if denominator != 0:
+        return(numerator % denominator)/denominator
+    elif denominator == 0:
+        return 0
+    else:
+        return 0
+
+
+print(fractional_part(5, 5))  # Should be 0, 5/5 = 1
+
+print(fractional_part(5, 4))  # Should be 0.25
+print(fractional_part(5, 3))  # Should be 0.66.
+print(fractional_part(5, 2))  # Should be 0.5
+print(fractional_part(5, 0))  # Should be 0
+print(fractional_part(0, 5))  # Should be 0
