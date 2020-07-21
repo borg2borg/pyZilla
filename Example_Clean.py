@@ -631,63 +631,65 @@ print(fractional_part(5, 0))  # Should be 0
 print(fractional_part(0, 5))  # Should be 0
 
 '''
-Week 6 - Script from ground up
-#process a list of Event objects using their attributes to generate a report that lists all users currently 
-logged in to the machines.
+Week 3
+While Loops, For Loops, Recursion
 
-get_event_date
-date, machine, user, type
-login, logout
+While Loops instruct your computer to continuously execute your code based on
+the value of a condition
 
-Sort() or Sorted()
-Use a set - when logged in, remove name from set when logged out
-Store in Dict, Dict of Set- 
 
-webserver:[]
-mainserver: []
 '''
 
+print("----- Week 3 - While loops  -----")
 
-def get_event_date(event):
-    return event.date
+x = 0
+while x < 5:  # while x is 0 as the initial value it is less than 5, also the loop will continue to execute while True
+    print("Not there yes, x=" + str(x))  # print statement string plus number string
+    x = x + 1  # x will equal that number + 1 until x is 5, which makes the above while loop false and kick out
+    # This will continue to print the statement plus the number until x = 5, which will print below
 
-
-def current_users(events):
-    events.sort(key=get_event_date)
-    machines = {}
-    for event in events:
-        if event.machine not in machines:
-            machines[event.machine] = set()
-        if event.type == "login":
-            machines[event.machine].add(event.user)
-        elif event.type == "logout":
-            machines[event.machine].remove(event.user)
-    return machines
+print("x=" + str(x))  # When x = 5, then just print x = 5
 
 
-def generate_report(machines):
-    for machine, users in machines.items():
-        if len(users) > 0:
-            user_list = ", ".join(users)
-            print("{}: {}".format(machine, user_list))
+def attempts(n):  # define attempts as n
+    x = 1  # initial value of x, so the statement will start at 1
+    while x <= n:  # while x is less than or equal to n is true
+        print("Attempt " + str(x))   # print statement string plus x value
+        x += 1  # expression x + 1 until the value of x is <= n or bigger than n
 
 
-class Event:
-    def __init__(self, event_date, event_type, machine_name, user):
-        self.date = event_date
-        self.type = event_type
-        self.machine = machine_name
-        self.user = user
+print("Done")  # When x less than so 1 -4 and equal to n which equals 5 attempts
+
+attempts(5)  # attempt is defined as try while loop 5 times or attempts
 
 
-events = [
-    Event('2020-01-21 12:45:56', 'login', 'myworkstation.local','Jordon'),
-    Event('2020-01-22 15:53:42', 'logout', 'myworkstation.local', 'Jordon'),
-    Event('2020-01-21 18:53:42', 'login', 'webserver.local', 'lane'),
-    Event('2020-01-23 12:24:35', 'login', 'mailserver.local', 'chris')
-]
+my_variable = 5  # Variable is 5
+while my_variable < 10:  # And, while that variable of 5 is less than 10
+    print("Hello")  # Print hello each time my_variable runs
+    my_variable += 1  # increment += 1 each time, so increment by adding 1 each time the while loop runs
 
-users = current_users(events)
-print(users)
 
-generate_report(users)
+x = 1
+sum = 0
+while x < 10:
+    sum += x  # increment 0 by 1
+    x += 1  # increment 1 by 1
+
+product = 1  # missing x
+x = 1  # adding x = 1 will allow this to run/ w.o it will print 1
+while x < 10:
+    product = product * x
+    x += 1  # should equal 362880
+
+
+print(sum, product)
+
+
+def count_down(current):
+    while (current > 0):
+        print(current)
+        current -= 1  # Must call current, give it a value and increment 'down' from count_down "4 " number
+    print("Zero!")  # Print zero when the while loop is great than 0 or = 0
+
+
+count_down(4)
