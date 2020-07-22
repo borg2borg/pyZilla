@@ -637,6 +637,9 @@ While Loops, For Loops, Recursion
 While Loops instruct your computer to continuously execute your code based on
 the value of a condition
 
+Another example
+
+While loops are great when the process is repeatable, a repeatable action until a condition changes
 
 '''
 
@@ -654,7 +657,7 @@ print("x=" + str(x))  # When x = 5, then just print x = 5
 def attempts(n):  # define attempts as n
     x = 1  # initial value of x, so the statement will start at 1
     while x <= n:  # while x is less than or equal to n is true
-        print("Attempt " + str(x))   # print statement string plus x value
+        print("Attempt " + str(x))  # print statement string plus x value
         x += 1  # expression x + 1 until the value of x is <= n or bigger than n
 
 
@@ -662,12 +665,10 @@ print("Done")  # When x less than so 1 -4 and equal to n which equals 5 attempts
 
 attempts(5)  # attempt is defined as try while loop 5 times or attempts
 
-
 my_variable = 5  # Variable is 5
 while my_variable < 10:  # And, while that variable of 5 is less than 10
     print("Hello")  # Print hello each time my_variable runs
     my_variable += 1  # increment += 1 each time, so increment by adding 1 each time the while loop runs
-
 
 x = 1
 sum = 0
@@ -681,7 +682,6 @@ while x < 10:
     product = product * x
     x += 1  # should equal 362880
 
-
 print(sum, product)
 
 
@@ -693,3 +693,175 @@ def count_down(current):
 
 
 count_down(4)
+
+'''
+using variables that are NOT defined, or Named Error
+x = 1
+
+Be aware for infinite loop
+while x % 2 == 0:
+    x = x / 2
+
+print(x)
+
+
+Python used 'Break' or like JS 'pop'
+'''
+
+
+def print_range(start, end):
+    n = start
+    while n <= end:
+        print(n)
+        n += 1  # MUST Add n+= 1
+
+
+print(print_range(1, 5))
+
+'''
+Week 3 Quiz - While loop
+'''
+
+print("----- Week 3 - Quiz While loops  -----")
+
+
+def print_prime_factors(number):
+    factor = 2  # Multiplying factor of number
+    while factor <= number:  # while the factor of 2 < = to 100
+        if number % factor == 0:  # Number is a divisor of 100 % 2 == 0
+            print(factor)  # print factor, in this case 2
+            number = number / factor  # take the number 100 = 100/2 equals 2
+        else:  # otherwise if
+            factor += 1  # increment factor or 2 += by 1 and return done
+    return "Done"
+
+
+print_prime_factors(100)
+
+
+def is_power_of_two(n):
+    while n % 2 == 0 and n != 0:  # While the number's modulo '%'  2 == 0 and the number is not 0
+        n = n / 2  # number = number / 2
+    if n == 1:
+        return True
+    return False
+
+
+print(is_power_of_two(0))  # 0 % 2 = 0 and it is 0 so returns False -  False
+print(is_power_of_two(1))  # 1 % 2 = 1 and it's not 0, 1 ==1 returns True - True
+print(is_power_of_two(8))  # 8 % 2 = 0 4 is not 0, 4 = 4 / 2 returns True - True
+print(is_power_of_two(9))  # 9 % 2 = 1 and it's not 0 and not == 1 so return False - False
+
+
+def sum_divisors(n):
+    x = 1  # Variable x = 1
+    sum = 0  # Variable sum = 0
+    if n == 0:  # if sum_divisor 0
+        sum += n  # increment by 0, 3, 36, 102
+    else:  # else sum_divisor != 0 so, 3, 36, 102
+        while n > x:  # sum_divisor = 3, 36, 102 is greater than 1
+            while n % x == 0 and n != x:  # while 3, 36, 102 % equals 0 and 3, 36, 102 is not 1
+                sum += x  # increment 0 by 1
+                x += 1  # increment 1 by 1
+            x += 1  # increment 1 by 1
+    return sum  # return sum +1
+
+
+print(sum_divisors(0))
+print(sum_divisors(1))
+print(sum_divisors(3))
+print(sum_divisors(36))  # 1+2+3+4+6+9+12+18 equals 55
+print(1 + 2 + 3 + 4 + 6 + 9 + 12 + 18)
+print(sum_divisors(102))  # 2+3+6+17+34+51 equals 114
+print(1 + 2 + 3 + 6 + 17 + 34 + 51)
+
+
+def multiplication_table(number):
+    multiplier = 1  # multiplier variable equals 1
+    while multiplier <= 5:  # expression or condition, while 1 is < or equal to 5
+        result = number * multiplier  # the result is equal to a number * 1
+        if result > 25:  # condition, if this result * 1 is greater than 25,
+            break  # break and print i.e in this example 3 * 6
+        print(str(number) + "x" + str(multiplier) + "=" + str(result))
+        multiplier += 1  # increment the multiplier until the result is greater than 25, again 3 * 6
+
+
+multiplication_table(3)  # shall print 3*1 - 3*5
+multiplication_table(5)  # 5*1 - 5*5, because the result has to be greater than 25, i.e. 5 * 6 would be in this case
+
+'''
+Week 3 - For loops
+
+For  - in: don't forget the colon
+"For" loops are great when a sequence of elements(strings, numbers etc.) which you would like iterate over
+'''
+
+'''
+for x in range(5):  # expression for a variable within a "range" of numbers, value 0 by default and ending at 5
+    print(x)  # shall print list 0 - 4
+'''
+
+
+def square(n):  # define square with the parameter n
+    return n * n  # return parameter of n * parameter of n, 10 * 10
+
+
+def sum_squares(x):  # define sum squares with the parameter x
+    sum = 0  # sum initial value is 0
+    for n in range(1, x + 1):  # expression, while the parameter n, 10 in range of x
+        sum += x and x != 0  # increment by parameter x or 10, and 10 != 0
+    return sum  # return the sum variable
+
+
+print(sum_squares(10))  # # 3,5,7,9,11 - 285
+
+# string type for loop
+friends = ['Taylor', 'Alex', 'Pat', 'Eli']  # variable friends is a list of friend(s)
+for friend in friends:  # for each friend in the variable list of friends
+    print("Hi " + friend)  # print string and friend name in list, "Hi Taylor....
+
+# number type for loop
+values = [23, 52, 59, 37, 48]  # variable values is a list of numbers
+sum = 0  # sum variable = num 0
+length = 0  # sum variable = num 0
+for value in values:  # for each value in the variable list of values
+    sum += value  # sum total each value 23, 52..
+    length += 1  # take length which initial value is 0 and increment by 1 and list has 5 numbers, therefore length = 5
+    # 23+52+59+37+48
+    # 23+52+59+37+48/5
+
+print("Sum: " + str(23 + 52 + 59 + 37 + 48))
+print("Average: " + str(219 / 5))
+print("Total sum:" + str(sum) + " - Average: " + str(sum / length))
+
+product = 1  # product variable equals 1
+for n in range(1, 10):  # for n in range from 1 to 10
+    product = product * n  # product of 1 = product 1 * range 1 - 10 or 1*2*3*4*5*6*7*8*9
+
+print(1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9)  # So, he is the answer in long form to check the input
+print(product)
+
+
+# Test Example for Factorials
+def factorial(n):  # define factorial parameter n
+    result = 1  # variable initial value is 1
+    for i in range(1, n + 1):  # i in range between 1 and n+1 = 5
+        result = result * i  # so 1 = 1 * 1 - 4 AND 1 - 5
+    return result
+
+
+print(1 * 2 * 3 * 4)
+print(factorial(4))
+print(1 * 2 * 3 * 4 * 5)
+print(factorial(5))
+print(1 * 2 * 3 * 4 * 5 * 6)
+print(factorial(6))
+
+
+def to_celsius(x):
+    return (x-32)*5/9
+
+for x in range(0, 101, 10):
+    print(x, to_celsius(x))
+
+print(0 - 32 * 5/9)
