@@ -864,4 +864,21 @@ def to_celsius(x):
 for x in range(0, 101, 10):
     print(x, to_celsius(x))
 
-print(0 - 32 * 5/9)
+print(0 - 32 * 5/9)  # 32 * 0.55 repeating
+print(1 - 32 * 5/9)
+print(10 - 32 * 5/9)
+
+
+'''
+To quickly recap the range() function when passing one, two, or three parameters:
+One parameter will create a sequence, one-by-one, from zero to one less than the parameter.
+Two parameters..., one-by-one, from the first parameter to one less than the second parameter.
+
+Three parameters... starting with the first parameter and stopping before the second parameter, 
+but this time increasing each step by the third parameter.
+'''
+
+for left in range(7):
+    for right in range(left, 7):
+        print("[" + str(left) + "|" + str(right) + "]", end=" ")
+    print()
