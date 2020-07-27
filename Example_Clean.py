@@ -859,15 +859,15 @@ print(factorial(6))
 
 
 def to_celsius(x):
-    return (x-32)*5/9
+    return (x - 32) * 5 / 9
+
 
 for x in range(0, 101, 10):
     print(x, to_celsius(x))
 
-print(0 - 32 * 5/9)  # 32 * 0.55 repeating
-print(1 - 32 * 5/9)
-print(10 - 32 * 5/9)
-
+print(0 - 32 * 5 / 9)  # 32 * 0.55 repeating
+print(1 - 32 * 5 / 9)
+print(10 - 32 * 5 / 9)
 
 '''
 To quickly recap the range() function when passing one, two, or three parameters:
@@ -882,3 +882,23 @@ for left in range(7):
     for right in range(left, 7):
         print("[" + str(left) + "|" + str(right) + "]", end=" ")
     print()
+
+teams = ["Dragons", "Wolves", "Shark", "Pandas", "Unicorns", "Gators"]
+for home_team in teams:
+    for away_team in teams:
+        if home_team != away_team:
+            print(home_team + " vs " + away_team)
+
+
+for x in [25]:  # print x in 25, it would be 25
+    print(x)
+
+
+def greet_friends(friends):
+    for friend in friends:
+        print("Hi friend, you are " + friend)
+
+
+greet_friends(['Taylor', 'Wayne', 'Bruce', 'Wayne 2', 'Anne', 'Lisa', 'Francis'])  # List
+greet_friends("Barry")  # element
+
