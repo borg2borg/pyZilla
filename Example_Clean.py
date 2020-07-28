@@ -250,14 +250,13 @@ print(hours, minutes, seconds)
 
 
 # Return None value ----
+'''
 def greeting(name):
     print("Welcome, " + name)
-
 
 result = greeting("Christine")
 print(result)  # none returned value, special data type - indicate empty or return nothing -----
 
-'''
 Return value or pass data back to the user/console when a function is called
 That data passed back can be stored value and stored as a variable
 '''
@@ -889,7 +888,6 @@ for home_team in teams:
         if home_team != away_team:
             print(home_team + " vs " + away_team)
 
-
 for x in [25]:  # print x in 25, it would be 25
     print(x)
 
@@ -901,4 +899,73 @@ def greet_friends(friends):
 
 greet_friends(['Taylor', 'Wayne', 'Bruce', 'Wayne 2', 'Anne', 'Lisa', 'Francis'])  # List
 greet_friends("Barry")  # element
+
+'''
+def validate_users(users):
+    for user in users:
+        if valid(user):
+            print(user + " is valid")
+        else:
+            print(user + "is invalid")
+
+
+validate_users(['purplecat'])
+'''
+
+'''
+Week 3 For loops
+'''
+print("----- Week 3 - Quiz for loops  -----")
+
+
+def factorial(n):  # define factorial with the parameter n
+    result = 1  # the result  of the for loop is equal to 1
+    for x in range(1, n + 1):  # while x in a range 1 plus parameter n, increment 1 number until we get to the number
+        result = result * x  # the result will be result of 1 * x in the range of 1 to n+1
+
+    for n in range(0, 10):  # now, n is in a range of 0 and 10
+        print(n, factorial(n, n + 1))  # print each number from 0 to 10, the factorial times the number
+
+
+for x in range(1, 11):  # def x within a range from 1 to 11
+    print(x ** 3)  # print x, those numbers between 1 and 11, by the power of 3
+
+x = 0
+while x < 101:
+    result = x * 7
+    x += 1
+    if result > 100:
+        break
+    print(result)
+
+'''
+def retry(operation, attempts):
+    for n in range(attempts):
+        if operation():
+            print("attempt " + str(n) + " succeeded")
+            break
+        else:
+            print("attempt " + str(n) + "failed")
+
+
+print(retry(str(create_user), 3))
+print(retry(str(stop_service), 5))
+'''
+
+'''
+Option Recursion
+'''
+
+
+def factorial(n):
+    print("Factor called with " + str(n))
+    if n < 2:
+        print("Returning 1")
+        return 1
+    result = n * factorial(n - 1)
+    print("Returning " + str(result) + " for factor of " + str(n))
+    return result
+
+factorial(4)
+
 
